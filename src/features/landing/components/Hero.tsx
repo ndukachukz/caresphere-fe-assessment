@@ -100,7 +100,7 @@ export const Hero = () => {
 				</div>
 
 				<p
-					className="cs-reveal mt-6 text-[13px] text-[#686B7A]"
+					className="cs-reveal mt-6 text-[13px] text-[#8E91A0]"
 					style={{ animationDelay: "0.2s" }}
 				>
 					The future of care isn&apos;t more technology — it&apos;s technology

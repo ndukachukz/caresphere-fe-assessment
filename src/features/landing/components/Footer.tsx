@@ -17,7 +17,7 @@ export const Footer = () => {
 					</span>
 				</div>
 
-				<p className="text-[12px] text-[#686B7A]">
+				<p className="text-[12px] text-[#8E91A0]">
 					A living constellation of care.
 				</p>
 

@@ -7,9 +7,9 @@ const HIGHLIGHTS = [
 ];
 
 const MOMENTS = [
-	{ label: "Morning check-in", time: "9:00" },
-	{ label: "Medication reminder", time: "12:30" },
-	{ label: "Family video call", time: "18:00" },
+	{ label: "Morning check-in", time: "9:00", dateTime: "09:00" },
+	{ label: "Medication reminder", time: "12:30", dateTime: "12:30" },
+	{ label: "Family video call", time: "18:00", dateTime: "18:00" },
 ];
 
 export const ExperienceShowcase = () => {
@@ -37,7 +37,10 @@ export const ExperienceShowcase = () => {
 								key={item}
 								className="flex items-center gap-3 text-[14px] text-[#A6A8B5]"
 							>
-								<span className="cs-node h-1.5 w-1.5 rounded-full bg-[#8EE7D7] shadow-[0_0_8px_rgba(142,231,215,0.8)]" />
+								<span
+									aria-hidden="true"
+									className="cs-node h-1.5 w-1.5 rounded-full bg-[#8EE7D7] shadow-[0_0_8px_rgba(142,231,215,0.8)]"
+								/>
 								{item}
 							</li>
 						))}
@@ -55,12 +58,15 @@ export const ExperienceShowcase = () => {
 							<p className="text-[13px] font-semibold text-[#F5F5F7]">
 								Today&apos;s care rhythm
 							</p>
-							<p className="mt-0.5 text-[11px] text-[#686B7A]">
+							<p className="mt-0.5 text-[11px] text-[#8E91A0]">
 								Thursday · updated just now
 							</p>
 						</div>
 						<span className="inline-flex items-center gap-1.5 rounded-full border border-[rgba(142,231,215,0.30)] bg-[rgba(142,231,215,0.08)] px-2.5 py-1">
-							<span className="cs-node h-1.5 w-1.5 rounded-full bg-[#8EE7D7] shadow-[0_0_8px_rgba(142,231,215,0.9)]" />
+							<span
+								aria-hidden="true"
+								className="cs-node h-1.5 w-1.5 rounded-full bg-[#8EE7D7] shadow-[0_0_8px_rgba(142,231,215,0.9)]"
+							/>
 							<span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#8EE7D7]">
 								Connected
 							</span>
@@ -85,7 +91,7 @@ export const ExperienceShowcase = () => {
 							<p className="text-[13px] font-medium text-[#F5F5F7]">
 								Care team online
 							</p>
-							<p className="text-[11px] text-[#686B7A]">
+							<p className="text-[11px] text-[#8E91A0]">
 								Family, caregiver &amp; nurse connected
 							</p>
 						</div>
@@ -98,12 +104,18 @@ export const ExperienceShowcase = () => {
 								className="flex items-center justify-between rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] px-4 py-3"
 							>
 								<span className="flex items-center gap-3 text-[13px] text-[#A6A8B5]">
-									<span className="cs-node h-1.5 w-1.5 rounded-full bg-[#7C6CFF] shadow-[0_0_8px_rgba(124,108,255,0.8)]" />
+									<span
+										aria-hidden="true"
+										className="cs-node h-1.5 w-1.5 rounded-full bg-[#7C6CFF] shadow-[0_0_8px_rgba(124,108,255,0.8)]"
+									/>
 									{moment.label}
 								</span>
-								<span className="text-[11px] tabular-nums text-[#686B7A]">
+								<time
+									dateTime={moment.dateTime}
+									className="text-[11px] tabular-nums text-[#8E91A0]"
+								>
 									{moment.time}
-								</span>
+								</time>
 							</div>
 						))}
 					</div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const NAV_LINKS = [
 	{ label: "How it works", href: "#how-it-works" },
@@ -9,18 +9,40 @@ const NAV_LINKS = [
 export const Header = () => {
 	const [expanded, setExpanded] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
+	const toggleRef = useRef<HTMLButtonElement | null>(null);
+
+	const closeMenu = useCallback(() => {
+		setExpanded(false);
+		toggleRef.current?.focus();
+	}, []);
 
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 24);
 		const onHashChange = () => setExpanded(false);
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === "Escape" && expanded) {
+				closeMenu();
+			}
+		};
 		onScroll();
 		window.addEventListener("scroll", onScroll, { passive: true });
 		window.addEventListener("hashchange", onHashChange);
+		window.addEventListener("keydown", onKeyDown);
 		return () => {
 			window.removeEventListener("scroll", onScroll);
 			window.removeEventListener("hashchange", onHashChange);
+			window.removeEventListener("keydown", onKeyDown);
 		};
-	}, []);
+	}, [expanded, closeMenu]);
+
+	useEffect(() => {
+		if (!expanded) return;
+		const previousOverflow = document.body.style.overflow;
+		document.body.style.overflow = "hidden";
+		return () => {
+			document.body.style.overflow = previousOverflow;
+		};
+	}, [expanded]);
 
 	return (
 		<header
@@ -72,6 +94,7 @@ export const Header = () => {
 
 				<button
 					type="button"
+					ref={toggleRef}
 					onClick={() => setExpanded((v) => !v)}
 					aria-expanded={expanded}
 					aria-controls="cs-mobile-menu"

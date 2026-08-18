@@ -141,7 +141,7 @@ const STEPS = [
 
 export const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="relative px-5  sm:py-28">
+    <section id="how-it-works" className="relative px-5 py-[88px] sm:py-28">
       <div className="mx-auto max-w-6xl">
         <div>
           <p className="cs-label">How it works</p>
@@ -164,7 +164,7 @@ export const HowItWorks = () => {
           {STEPS.map((step) => (
             <ScrollStackItem
               key={step.index}
-              itemClassName="flex items-center gap-5 rounded-[20px] border border-white/10 bg-[rgba(255,255,255,0.045)] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-colors duration-300 hover:border-[rgba(124,108,255,0.30)] sm:gap-8 sm:p-8"
+              itemClassName="flex flex-wrap  gap-5 rounded-[20px] border border-white/10 bg-[rgba(255,255,255,0.045)] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-colors duration-300 hover:border-[rgba(124,108,255,0.30)] sm:gap-8 sm:p-8"
             >
               <div className="grid shrink-0 place-items-center rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)]">
                 {step.visual}

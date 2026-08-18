@@ -45,7 +45,10 @@ export const CareEcosystem = () => {
 						className="absolute left-1/2 top-10 h-48 w-48 -translate-x-1/2 rounded-full border border-[rgba(124,108,255,0.30)] bg-[radial-gradient(circle_at_35%_30%,rgba(142,231,215,0.35),rgba(124,108,255,0.18)_50%,rgba(58,43,114,0.25))] shadow-[0_0_60px_rgba(124,108,255,0.35)] sm:top-1/2 sm:h-64 sm:w-64 sm:-translate-y-1/2"
 						aria-hidden="true"
 					/>
-					<div className="cs-orbit-slow absolute left-1/2 top-10 h-64 w-64 -translate-x-1/2 rounded-full border border-white/10 sm:top-1/2 sm:h-80 sm:w-80 sm:-translate-y-1/2" />
+					<div
+						className="cs-orbit-slow absolute left-1/2 top-10 h-64 w-64 -translate-x-1/2 rounded-full border border-white/10 sm:top-1/2 sm:h-80 sm:w-80 sm:-translate-y-1/2"
+						aria-hidden="true"
+					/>
 
 					<div className="relative z-10 grid gap-4 pt-56 sm:grid-cols-3 sm:gap-5 sm:pt-0">
 						{BENEFITS.map((benefit) => (
